@@ -1,0 +1,58 @@
+<!-- Material form register -->
+<mdb-card>
+  
+    <mdb-card-header class="default-color white-text text-center py-3">
+        <h5>
+          <strong>Despesa</strong>
+        </h5>
+      </mdb-card-header>
+    <!--Card content-->
+    <mdb-card-body class="px-lg-5 pt-0">
+  
+      <!-- Form -->
+      <form style="color: #757575;" class="md-form" >
+
+        <p class="text-default text-center"><i class="fas fa-calendar mr-2"></i>
+                Dia: {{apontamento.diaApontamento}} Mês: {{apontamento.mesApontamento}} </p>
+
+        <div class="md-form form-group">
+            <mdb-icon fas icon="comment-dots" class="prefix"></mdb-icon>
+            <input mdbInput type="text" [(ngModel)]="apontamento.descricao" name="descricao" class="form-control" >
+            <label for="descricao">Descrição</label>
+        </div>
+
+        <div class="md-form form-group">
+            <mdb-icon fas icon="comment-dollar" class="prefix"></mdb-icon>
+            <input mdbInput type="text" id="valor" [(ngModel)]="apontamento.valor" name="valor" class="form-control">
+            <label for="valor">Valor</label>
+        </div>
+
+        <div class="md-form form-group">
+            <mdb-icon fas icon="money-check" class="prefix"></mdb-icon>
+            <select class="browser-default custom-select form-control" 
+           [(ngModel)]="apontamento.formaPagamento"  name="formaPagamento" style="width: calc(100% - 2.5rem);margin-left: 2.5rem;" >
+              <option selected>Selecione Forma de Pagamento</option>
+              <option value="DI">Dinheiro</option>
+              <option value="CD">Cartão débito</option>
+              <option value="CC">Cartão crédito</option>
+          </select>
+        </div>
+       
+        <!-- Sign up button -->
+        <div class="text-center md-form">
+            <button mdbBtn color="blue-grey"  rounded="true"  
+            class="my-4 waves-effect z-depth-1 text-center white-text md-form"  
+            mdbWavesEffect type="submit" (click)="apontar()" >
+              <strong>Apontar</strong>
+            </button>
+        </div>
+  
+        <hr>
+  
+      </form>
+      <!-- Form -->
+  
+    </mdb-card-body>
+  
+  </mdb-card>
+  <!-- Material form register -->

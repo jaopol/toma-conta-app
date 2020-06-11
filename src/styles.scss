@@ -1,0 +1,34 @@
+/* Application-wide Styles */
+h1 {
+    color: #369;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 250%;
+  }
+  h2, h3, p {
+    color: #444;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+  }
+  body {
+    margin: 2em;
+  }
+  body, input[type="text"], button {
+    color: #333;
+    font-family: Cambria, Georgia;
+  }
+  /* everywhere else */
+  * {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  /* cores para validações dos campos */
+  .ng-valid[required], .ng-valid.required {
+    border-left: 5px solid rgba(32, 77, 32, 0.623);
+   }
+   .ng-invalid:not(form) {
+    border-left: 5px solid rgb(148, 27, 27);
+   }
+   #toast-container > div {
+    opacity:1;
+   }
+  
