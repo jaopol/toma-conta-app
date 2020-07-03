@@ -3,6 +3,9 @@
 Projeto para estudo em agular.
 Executando requisições no backend em NodeJs - Toma Conta
 
+Aplicativo integrado ao Heroku, fazendo o CI/CD - `https://toma-conta-app.herokuapp.com/`
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.26.
 
 ## Development server

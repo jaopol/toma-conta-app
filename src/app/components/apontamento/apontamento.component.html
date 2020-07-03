@@ -23,7 +23,7 @@
 
         <div class="md-form form-group">
             <mdb-icon fas icon="comment-dollar" class="prefix"></mdb-icon>
-            <input mdbInput type="text" id="valor" [(ngModel)]="apontamento.valor" name="valor" class="form-control">
+            <input mdbInput currencyMask type="text"  id="valor" [(ngModel)]="apontamento.valor" name="valor" class="form-control" [options]="{ align: left } ">
             <label for="valor">Valor</label>
         </div>
 
