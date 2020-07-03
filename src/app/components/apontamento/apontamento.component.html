@@ -23,7 +23,7 @@
 
         <div class="md-form form-group">
             <mdb-icon fas icon="comment-dollar" class="prefix"></mdb-icon>
-            <input mdbInput currencyMask type="text"  id="valor" [(ngModel)]="apontamento.valor" name="valor" class="form-control" [options]="{ align: left } ">
+            <input mdbInput currencyMask type="text"  id="valor" [(ngModel)]="apontamento.valor" name="valor" class="form-control" >
             <label for="valor">Valor</label>
         </div>
 
@@ -31,7 +31,7 @@
             <mdb-icon fas icon="money-check" class="prefix"></mdb-icon>
             <select class="browser-default custom-select form-control" 
            [(ngModel)]="apontamento.formaPagamento"  name="formaPagamento" style="width: calc(100% - 2.5rem);margin-left: 2.5rem;" >
-              <option selected>Selecione Forma de Pagamento</option>
+              <option selected disabled >Selecione Forma de Pagamento</option>
               <option value="DI">Dinheiro</option>
               <option value="CD">Cartão débito</option>
               <option value="CC">Cartão crédito</option>

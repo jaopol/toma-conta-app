@@ -13,13 +13,13 @@ import { FooterComponent } from './shared/components/navigation/footer/footer.co
 import { WelcomeComponent } from './components/welcome/welcome.component';
 
 export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
-  align: "left",
+  align: 'left',
   allowNegative: false,
-  decimal: ",",
+  decimal: ',',
   precision: 2,
-  prefix: "$ ",
-  suffix: "",
-  thousands: "."
+  prefix: '$ ',
+  suffix: '',
+  thousands: '.'
 };
 
 @NgModule({
