@@ -57,7 +57,8 @@
         </tr>
         </thead>
         <tbody #row>
-        <tr mdbTableCol (rowCreated)="addNewRow($event)" (rowRemoved)="removeRow($event)" *ngFor="let el of elements; let i = index">
+        <!--tr mdbTableCol (rowCreated)="addNewRow($event)" (rowRemoved)="removeRow($event)" *ngFor="let el of elements; let i = index" -->
+        <tr mdbTableCol (rowCreated)="addNewRow()" (rowRemoved)="removeRow()" *ngFor="let el of elements; let i = index">
           <th *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex" scope="row">{{el.id}}</th>
           <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex" class="red-text">{{el.first}}</td>
           <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{el.last}}</td>
