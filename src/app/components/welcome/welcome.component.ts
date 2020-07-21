@@ -1,5 +1,7 @@
 import { Component, OnInit, ElementRef, HostListener, AfterViewInit, ViewChild, ChangeDetectorRef } from '@angular/core';
 import { MdbTableDirective, MdbTablePaginationComponent } from 'angular-bootstrap-md';
+import { ApiService } from '../../core/api.service';
+import { ApontamentoDTO } from '../../core/model/apontamentoDTO';
 
 @Component({
   selector: 'app-welcome',
@@ -7,6 +9,8 @@ import { MdbTableDirective, MdbTablePaginationComponent } from 'angular-bootstra
   styleUrls: ['./welcome.component.scss']
 })
 export class WelcomeComponent implements OnInit, AfterViewInit {
+
+  public apontamentoDTO = new ApontamentoDTO();
 
   @ViewChild(MdbTableDirective, { static: true }) mdbTable: MdbTableDirective;
   @ViewChild(MdbTablePaginationComponent, { static: true }) mdbTablePagination: MdbTablePaginationComponent;
@@ -20,7 +24,8 @@ export class WelcomeComponent implements OnInit, AfterViewInit {
 
   maxVisibleItems: number = 8;
 
-  constructor(private cdRef: ChangeDetectorRef) {}
+  constructor(private cdRef: ChangeDetectorRef, private apiSerice: ApiService) {
+  }
 
   @HostListener('input') oninput() {
     this.mdbTablePagination.searchText = this.searchText;
@@ -31,12 +36,29 @@ export class WelcomeComponent implements OnInit, AfterViewInit {
     //   this.elements.push({id: i.toString(), first: 'Wpis ' + i, last: 'Last ' + i, handle: 'Handle ' + i});
     // }
 
-    this.elements.push({id: '', first: 'Wpis ' + '', last: 'Last ' + '', handle: 'Handle ' + ''});
+    //this.elements.push({id: '', first: 'Wpis ' + '', last: 'Last ' + '', handle: 'Handle ' + ''});
 
-    this.mdbTable.setDataSource(this.elements);
-    this.elements = this.mdbTable.getDataSource();
-    this.previous = this.mdbTable.getDataSource();
+    // this.mdbTable.setDataSource(this.elements);
+    // this.elements = this.mdbTable.getDataSource();
+    // this.previous = this.mdbTable.getDataSource();
 
+    this.getAllApontament();
+
+  }
+
+  getAllApontament(): void {
+
+      this.apiSerice.getAllApontament().subscribe( data => {
+
+          data.forEach( function( element: ApontamentoDTO ) {
+            this.elements.push( element.descricao );
+          });
+          this.mdbTable.setDataSource(this.elements);
+          this.elements = this.mdbTable.getDataSource();
+          this.previous = this.mdbTable.getDataSource();
+        }, error => {
+          console.log( 'Error no apontamento', error );
+        } );
   }
 
   ngAfterViewInit(): void {

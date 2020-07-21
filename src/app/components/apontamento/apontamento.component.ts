@@ -23,7 +23,6 @@ export class ApontamentoComponent implements OnInit {
     this.apontamento.diaApontamento = data.getDate().valueOf();
     this.apontamento.mesApontamento = Mes[ this.apontamento.numeroMes ];
     this.apontamento.tipoApontamento = TipoApontamento.despesa;
-    console.log( this.apontamento.tipoApontamento );
    }
 
   ngOnInit() {

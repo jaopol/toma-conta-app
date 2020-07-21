@@ -23,9 +23,15 @@ export class ApiService {
   public apontar( apontamentoDTO: ApontamentoDTO ): Observable<any> {
 
     this.baseUrlApi = `${AppUtils.BASE_URL_API}/api/v1/apontamento`;
-    console.log( `request in ${this.baseUrlApi}` );
+    //console.log( `request in ${this.baseUrlApi}` );
     return this.httpClient.post( this.baseUrlApi, apontamentoDTO, this._OPTIONS );
   }
 
+  public getAllApontament(): Observable<any> {
+
+    this.baseUrlApi = `${AppUtils.BASE_URL_API}/api/v1/apontamento`;
+
+    return this.httpClient.get( this.baseUrlApi, this._OPTIONS );
+  }
 
 }
