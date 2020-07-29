@@ -58,11 +58,11 @@
         </thead>
         <tbody #row>
         <!--tr mdbTableCol (rowCreated)="addNewRow($event)" (rowRemoved)="removeRow($event)" *ngFor="let el of elements; let i = index" -->
-        <tr mdbTableCol (rowCreated)="addNewRow()" (rowRemoved)="removeRow()" *ngFor="let el of elements; let i = index">
-          <th *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex" scope="row">{{el.id}}</th>
-          <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex" class="red-text">{{el.first}}</td>
-          <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{el.last}}</td>
-          <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{el.handle}}</td>
+        <tr mdbTableCol *ngFor="let el of elements; let i = index">
+          <th *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex" scope="row">{{el.descricao}}</th>
+          <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{el.diaApontamento}}</td>
+          <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{el.mesApontamento}}</td>
+          <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex" style="mask: 0.000,00;" >{{el.valor}}</td>
         </tr>
         </tbody>
         <tfoot class="grey lighten-5 w-100">
